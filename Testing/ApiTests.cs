@@ -10,7 +10,10 @@ namespace Last.Api.Tests
 
         public ApiIntegrationTests(WebApplicationFactory<Program> factory)
         {
-            _client = factory.CreateClient();
+            _client = factory.WithWebHostBuilder(builder =>
+            {
+                builder.UseContentRoot(Directory.GetCurrentDirectory());
+            }).CreateClient();
         }
 
         [Fact]
