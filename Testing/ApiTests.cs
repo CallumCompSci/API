@@ -2,6 +2,7 @@ using System.Net;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Xunit;
 using System.Text.Json;
+using Last_Api.Models;
 
 namespace Last.Api.Tests
 {
