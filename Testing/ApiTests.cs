@@ -39,9 +39,9 @@ namespace Last.Api.Tests
 
 
 
-
+        //Artifacts
         [Fact]
-        public async Task Artifacts_returns()
+        public async Task getArtifacts()
         {
             var response = await _client.GetAsync("/api/artifacts");
 
@@ -55,6 +55,62 @@ namespace Last.Api.Tests
             
             Assert.NotNull(artifacts);
             Assert.IsType<List<Artifact>>(artifacts);
+        }
+
+        //Eras
+        [Fact]
+        public async Task getEras()
+        {
+            var response = await _client.GetAsync("/api/arteras");
+
+            response.EnsureSuccessStatusCode();
+
+            var content = await response.Content.ReadAsStringAsync();
+            var artifacts = JsonSerializer.Deserialize<List<ArtEra>>(content, new JsonSerializerOptions 
+            { 
+                PropertyNameCaseInsensitive = true 
+            });
+            
+            Assert.NotNull(ArtEra);
+            Assert.IsType<List<ArtEra>>(arteras);
+        }
+
+
+        //Eras
+        [Fact]
+        public async Task getTribes()
+        {
+            var response = await _client.GetAsync("/api/tribe");
+
+            response.EnsureSuccessStatusCode();
+
+            var content = await response.Content.ReadAsStringAsync();
+            var artifacts = JsonSerializer.Deserialize<List<Tribe>>(content, new JsonSerializerOptions 
+            { 
+                PropertyNameCaseInsensitive = true 
+            });
+            
+            Assert.NotNull(Tribe);
+            Assert.IsType<List<Tribe>>(tribes);
+        }
+
+
+        //users
+        [Fact]
+        public async Task getUsers()
+        {
+            var response = await _client.GetAsync("/api/user");
+
+            response.EnsureSuccessStatusCode();
+
+            var content = await response.Content.ReadAsStringAsync();
+            var artifacts = JsonSerializer.Deserialize<List<User>>(content, new JsonSerializerOptions 
+            { 
+                PropertyNameCaseInsensitive = true 
+            });
+            
+            Assert.NotNull(User);
+            Assert.IsType<List<User>>(users);
         }
     }
 }
