@@ -28,7 +28,7 @@ namespace Last.Api.Tests
         [Fact]
         public async Task Artifacts_returns()
         {
-            var response = await _client.GetAsync("/artifacts");
+            var response = await _client.GetAsync("/api/artifacts");
 
             response.EnsureSuccessStatusCode();
 
