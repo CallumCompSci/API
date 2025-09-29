@@ -1,6 +1,7 @@
 using System.Net;
 using Microsoft.AspNetCore.Mvc.Testing;
 using Xunit;
+using System.Text.Json;
 
 namespace Last.Api.Tests
 {
@@ -27,7 +28,17 @@ namespace Last.Api.Tests
         public async Task Artifacts_returns()
         {
             var response = await _client.GetAsync("/artifacts");
-            Assert.True(response.IsSuccessStatusCode || response.StatusCode == HttpStatusCode.NotFound);
+
+            response.EnsureSuccessStatusCode();
+
+            var content = await response.Content.ReadAsStringAsync();
+            var artifacts = JsonSerializer.Deserialize<List<Artifact>>(content, new JsonSerializerOptions 
+            { 
+                PropertyNameCaseInsensitive = true 
+            });
+            
+            Assert.NotNull(artifacts);
+            Assert.IsType<List<Artifact>>(artifacts);
         }
     }
 }
