@@ -26,7 +26,7 @@ namespace Last.Api.Tests
                 builder.UseContentRoot(Directory.GetCurrentDirectory());
             }).CreateClient();
 
-            var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJCb2JAZ21haWwuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiVXNlciIsImV4cCI6MTc1OTE1NzMyNCwiaXNzIjoiQ2FsbHVtc0FQSSIsImF1ZCI6IkFQSVVzZXIifQ.chZ_qVQqPU3PxyZbzridxgsChykSH4rn_wjGjZuFEa0"; 
+            var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJIYXJyeUBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJhZG1pbiIsImV4cCI6MTc1OTE2NDg3MywiaXNzIjoiQ2FsbHVtc0FQSSIsImF1ZCI6IkFQSVVzZXIifQ.cRRW9TdBWwuli88I75HLZM9Hd88GStQldLlIMqxpRww"; 
             _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
         }
 
@@ -94,6 +94,23 @@ namespace Last.Api.Tests
             Assert.IsType<List<Tribe>>(tribes);
         }
 
+        //users
+        [Fact]
+        public async Task getUsers()
+        {
+            var response = await _client.GetAsync("/api/user");
+
+            response.EnsureSuccessStatusCode();
+
+            var content = await response.Content.ReadAsStringAsync();
+            var users = JsonSerializer.Deserialize<List<User>>(content, new JsonSerializerOptions 
+            { 
+                PropertyNameCaseInsensitive = true 
+            });
+            
+            Assert.NotNull(users);
+            Assert.IsType<List<User>>(users);
+        }
 
         
     }
