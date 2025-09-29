@@ -66,7 +66,7 @@ namespace Last.Api.Tests
             response.EnsureSuccessStatusCode();
 
             var content = await response.Content.ReadAsStringAsync();
-            var artifacts = JsonSerializer.Deserialize<List<ArtEra>>(content, new JsonSerializerOptions 
+            var arteras = JsonSerializer.Deserialize<List<ArtEra>>(content, new JsonSerializerOptions 
             { 
                 PropertyNameCaseInsensitive = true 
             });
@@ -85,7 +85,7 @@ namespace Last.Api.Tests
             response.EnsureSuccessStatusCode();
 
             var content = await response.Content.ReadAsStringAsync();
-            var artifacts = JsonSerializer.Deserialize<List<Tribe>>(content, new JsonSerializerOptions 
+            var tribes = JsonSerializer.Deserialize<List<Tribe>>(content, new JsonSerializerOptions 
             { 
                 PropertyNameCaseInsensitive = true 
             });
@@ -104,7 +104,7 @@ namespace Last.Api.Tests
             response.EnsureSuccessStatusCode();
 
             var content = await response.Content.ReadAsStringAsync();
-            var artifacts = JsonSerializer.Deserialize<List<User>>(content, new JsonSerializerOptions 
+            var users = JsonSerializer.Deserialize<List<User>>(content, new JsonSerializerOptions 
             { 
                 PropertyNameCaseInsensitive = true 
             });
