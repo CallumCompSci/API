@@ -71,7 +71,7 @@ namespace Last.Api.Tests
                 PropertyNameCaseInsensitive = true 
             });
             
-            Assert.NotNull(ArtEra);
+            Assert.NotNull(arteras);
             Assert.IsType<List<ArtEra>>(arteras);
         }
 
@@ -90,7 +90,7 @@ namespace Last.Api.Tests
                 PropertyNameCaseInsensitive = true 
             });
             
-            Assert.NotNull(Tribe);
+            Assert.NotNull(tribes);
             Assert.IsType<List<Tribe>>(tribes);
         }
 
@@ -109,7 +109,7 @@ namespace Last.Api.Tests
                 PropertyNameCaseInsensitive = true 
             });
             
-            Assert.NotNull(User);
+            Assert.NotNull(users);
             Assert.IsType<List<User>>(users);
         }
     }
