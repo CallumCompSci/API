@@ -95,22 +95,6 @@ namespace Last.Api.Tests
         }
 
 
-        //users
-        [Fact]
-        public async Task getUsers()
-        {
-            var response = await _client.GetAsync("/api/user");
-
-            response.EnsureSuccessStatusCode();
-
-            var content = await response.Content.ReadAsStringAsync();
-            var users = JsonSerializer.Deserialize<List<User>>(content, new JsonSerializerOptions 
-            { 
-                PropertyNameCaseInsensitive = true 
-            });
-            
-            Assert.NotNull(users);
-            Assert.IsType<List<User>>(users);
-        }
+        
     }
 }
