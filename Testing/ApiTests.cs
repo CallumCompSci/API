@@ -25,6 +25,11 @@ namespace Last.Api.Tests
             {
                 builder.UseContentRoot(Directory.GetCurrentDirectory());
             }).CreateClient();
+
+            var username = "StephenB@gmail.com"; 
+            var password = "sit331password"; 
+            var authToken = Convert.ToBase64String(Encoding.UTF8.GetBytes($"{username}:{password}"));
+            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authToken);
         }
 
         [Fact]
@@ -40,12 +45,6 @@ namespace Last.Api.Tests
         [Fact]
         public async Task Artifacts_returns()
         {
-            var username = "StephenB@gmail.com";
-            var password = "sit331password";
-            var authToken = Convert.ToBase64String(Encoding.UTF8.GetBytes($"{username}:{password}"));
-            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authToken);
-    
-            
             var response = await _client.GetAsync("/api/artifacts");
 
             response.EnsureSuccessStatusCode();
