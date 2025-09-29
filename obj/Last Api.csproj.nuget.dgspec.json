@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\aussc\\Documents\\Code\\T1-2025 CODE\\SIT331 (backend)\\Last Api\\Last Api.csproj": {}
+    "C:\\Users\\aussc\\Documents\\Code\\T1-2025 Code\\SIT331 (backend)\\Last Api\\Last Api.csproj": {}
   },
   "projects": {
-    "C:\\Users\\aussc\\Documents\\Code\\T1-2025 CODE\\SIT331 (backend)\\Last Api\\Last Api.csproj": {
+    "C:\\Users\\aussc\\Documents\\Code\\T1-2025 Code\\SIT331 (backend)\\Last Api\\Last Api.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\aussc\\Documents\\Code\\T1-2025 CODE\\SIT331 (backend)\\Last Api\\Last Api.csproj",
+        "projectUniqueName": "C:\\Users\\aussc\\Documents\\Code\\T1-2025 Code\\SIT331 (backend)\\Last Api\\Last Api.csproj",
         "projectName": "Last Api",
-        "projectPath": "C:\\Users\\aussc\\Documents\\Code\\T1-2025 CODE\\SIT331 (backend)\\Last Api\\Last Api.csproj",
+        "projectPath": "C:\\Users\\aussc\\Documents\\Code\\T1-2025 Code\\SIT331 (backend)\\Last Api\\Last Api.csproj",
         "packagesPath": "C:\\Users\\aussc\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\aussc\\Documents\\Code\\T1-2025 CODE\\SIT331 (backend)\\Last Api\\obj\\",
+        "outputPath": "C:\\Users\\aussc\\Documents\\Code\\T1-2025 Code\\SIT331 (backend)\\Last Api\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\aussc\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -56,6 +56,10 @@
               "target": "Package",
               "version": "[9.0.5, )"
             },
+            "Microsoft.AspNetCore.Mvc.Testing": {
+              "target": "Package",
+              "version": "[9.0.9, )"
+            },
             "Microsoft.AspNetCore.OpenApi": {
               "target": "Package",
               "version": "[9.0.5, )"
@@ -89,6 +93,16 @@
             "System.IdentityModel.Tokens.Jwt": {
               "target": "Package",
               "version": "[8.11.0, )"
+            },
+            "xunit": {
+              "target": "Package",
+              "version": "[2.9.3, )"
+            },
+            "xunit.runner.visualstudio": {
+              "include": "Runtime, Build, Native, ContentFiles, Analyzers, BuildTransitive",
+              "suppressParent": "All",
+              "target": "Package",
+              "version": "[3.1.5, )"
             }
           },
           "imports": [
