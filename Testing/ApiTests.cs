@@ -22,5 +22,12 @@ namespace Last.Api.Tests
             var response = await _client.GetAsync("/");
             Assert.True(response.IsSuccessStatusCode || response.StatusCode == HttpStatusCode.NotFound);
         }
+
+        [Fact]
+        public async Task Api_Starts_Successfully()
+        {
+            var response = await _client.GetAsync("/api/artifacts");
+            Assert.True(response.IsSuccessStatusCode || response.StatusCode == HttpStatusCode.NotFound);
+        }
     }
 }
