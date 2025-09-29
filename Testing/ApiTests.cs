@@ -26,10 +26,8 @@ namespace Last.Api.Tests
                 builder.UseContentRoot(Directory.GetCurrentDirectory());
             }).CreateClient();
 
-            var username = "StephenB@gmail.com"; 
-            var password = "sit331password"; 
-            var authToken = Convert.ToBase64String(Encoding.UTF8.GetBytes($"{username}:{password}"));
-            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Basic", authToken);
+            var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJCb2JAZ21haWwuY29tIiwiaHR0cDovL3NjaGVtYXMubWljcm9zb2Z0LmNvbS93cy8yMDA4LzA2L2lkZW50aXR5L2NsYWltcy9yb2xlIjoiVXNlciIsImV4cCI6MTc1OTE1NzMyNCwiaXNzIjoiQ2FsbHVtc0FQSSIsImF1ZCI6IkFQSVVzZXIifQ.chZ_qVQqPU3PxyZbzridxgsChykSH4rn_wjGjZuFEa0"; 
+            _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
         }
 
         [Fact]
