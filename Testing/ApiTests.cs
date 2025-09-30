@@ -26,7 +26,7 @@ namespace Last.Api.Tests
                 builder.UseContentRoot(Directory.GetCurrentDirectory());
             }).CreateClient();
 
-            var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJIYXJyeUBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJhZG1pbiIsImV4cCI6MTc1OTIzNTY1MywiaXNzIjoiQ2FsbHVtc0FQSSIsImF1ZCI6IkFQSVVzZXIifQ.JdWmZNDrUgXOAUCowhrKLuSUSbdgDeQFyL6n2pCfiw0";
+            var token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9lbWFpbGFkZHJlc3MiOiJIYXJyeUBnbWFpbC5jb20iLCJodHRwOi8vc2NoZW1hcy5taWNyb3NvZnQuY29tL3dzLzIwMDgvMDYvaWRlbnRpdHkvY2xhaW1zL3JvbGUiOiJhZG1pbiIsImV4cCI6MTc1OTIzODE4MCwiaXNzIjoiQ2FsbHVtc0FQSSIsImF1ZCI6IkFQSVVzZXIifQ.o2m2FmOwJyx-dtvH4UCcgpjgNGCnVZzY85nZX4zhE04";
             _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
         }
 
